@@ -1,0 +1,99 @@
+-- today
+[] code a ft_proc_readstr(proc, char**) function
+[] code dynamic resolution on ia32, by getting %ebx at the very beginning of the program
+[] code the set tracee function
+
+-- before soutenance
+[] set-interactiv command -> if non interactive mode, handle control xc with signal handler + event
+
+
+-- don't forget
+[] string reading on sparcv9
+[] release ft_cmd_t arguments
+
+
+-- list
+[] @implement the files in the include directory
+[] @code arch for arch/ft_arch-ttrace.c, arch/ft_arch-ptrace.c, arch/ft_arch-procfs.c
+[] @implement watchpoints, differentiate between logical structures and arch implementation
+[] @implement events
+[] @add an information exploration function for a given swdep
+[] @implement a register cache system to avoid multiple ptrace access
+[] @macro manipulating memory locations, forging it
+[x] @implement ptrace.c
+[x] implement breakpoints, watchpoint_ia32.c
+[x] watchpoint dependent functions are not to be called directly -> the manager will call them later
+[x] implement a good read_mm function, along with write_mm(think about block reading)
+[x] checks the bug, why doesn't run??
+[] @implement ttrace version
+[~] @implement procfs version
+[x] @implement dependent part for the watchpoint -> ia32 save instruction sequence and replaces it...
+[x] @watchpoint managing function should be in th list, separated from the hwdep part
+	-> matching a breakpoint is no longer in the hwdep part
+[] @find a restore function for the watchpoint (either there can be a flag that tells if we was in a breakpoint at the last instruction)
+[x] @implement the hw dependent data for watchpoints
+[x] implement breakpoints on sparc
+[x] @implement backtracing on sparc, ia32
+[x] @implement ft_hwframe_t
+[x] implement backtracing on sparcv9
+[x] implement backtracing and frames handling
+	+ compare it with tthe batkctrace inmpelemntation
+[] read manpages of linker to guess the path where it go to find directories
+
+
+
+-- ia32
+
+
+-- ia64
+[] find the frame pointer
+
+-- sparcv9
+[] @handle the multiple path in DT_RPATH slot, since it contains ':' token to separate the components
+
+
+-- symbols
+[] implement symbols and watchpoint association
+	+ ft_error_t ft_symbol_associate_watchpoint();
+	+ ft_error_t ft_watchpoint_associate_symbol();
+		-> those function should check the address of the watchpoint and tell if it's in the symbol objects;
+		putting a watchpoint on main is the same as putting a watchpoint in main + OFFSET with offset < sizeof(main)
+[] elf file format:
+	+ check on sparc
+	+ check on itanium
+	+ implement more sanity checks
+
+
+-- bugs
+[?] @makefile doesn't resolve dependencies
+
+
+-- where
+
+[] derefer the call to put breakpoint... -> should not be inserted before the process is waited
+[] implement watchpoint persistency
+[] @see who interlib calls are made (is the plt common, who the libraries are made available in the linkmap structure)
+[] checks the number of watchpoint available on the sparc architecture
+[x] see .so symbol handling
+	+ merge the list
+	+ list the interpreter dependencies
+	+ resolve the addresses, by getting ebx on ia32
+	+ test on sparc
+[x] symbol lookup function
+[] think about lazy watchpointing when on symbol... -> should not watchpoint until the address is resolved.
+[] test bktracing on sparc
+[] implement dynamic resolution
+[!] handle function pointer calls...
+[] i7 doesn't contain the return address in the main entry...???
+[] port on ia 64
+
+
+-- ideas
+[] instead of callee, why not callee + offset ?
+[] implement a memory location binder/resolver, so that
+   it has a getvaddr_fn() that can  get the virtual address
+   in a lazy fashion.
+
+-- materials
+@link http://www.users.qwest.net/~eballen1/sparc_asm.html
+@link http://www.cs.unm.edu/~maccabe/classes/341/labman/node9.html

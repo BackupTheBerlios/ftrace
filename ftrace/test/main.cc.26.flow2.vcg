@@ -1,0 +1,263 @@
+graph: {
+port_sharing: no
+graph: { title: "void foo()"
+folding: 1
+hidden: 2
+node: { title: "void foo().0" }
+graph: {
+title: "void foo().BB0"
+folding: 1
+color: lightblue
+label: "basic block 0"
+
+edge: { sourcename: "void foo().0" targetname: "void foo().18" color: blue }
+node: {
+  title: "void foo().18"
+  color: lightgrey
+  label: "note 18
+ NOTE_INSN_BASIC_BLOCK"
+}
+edge: { sourcename: "void foo().18" targetname: "void foo().21" }
+node: {
+  title: "void foo().21"
+  color: green
+  label: "insn 21
+(set (mem:SI (pre_dec:SI (reg/f:SI 7 esp)) [0 S4 A8])
+    (reg/f:SI 6 ebp))
+"
+}
+edge: { sourcename: "void foo().21" targetname: "void foo().22" }
+node: {
+  title: "void foo().22"
+  color: green
+  label: "insn 22
+(set (reg/f:SI 6 ebp)
+    (reg/f:SI 7 esp))
+"
+}
+edge: { sourcename: "void foo().22" targetname: "void foo().23" }
+node: {
+  title: "void foo().23"
+  color: green
+  label: "insn 23
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 7 esp)
+                (const_int -8 [0xfffffff8])))
+        (clobber (reg:CC 17 flags))
+        (clobber (mem:BLK (scratch) [0 A8]))
+    ])
+"
+}
+edge: { sourcename: "void foo().23" targetname: "void foo().10" }
+node: {
+  title: "void foo().10"
+  color: green
+  label: "insn 10
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 7 esp)
+                (const_int -12 [0xfffffff4])))
+        (clobber (reg:CC 17 flags))
+    ])
+"
+}
+edge: { sourcename: "void foo().10" targetname: "void foo().11" }
+node: {
+  title: "void foo().11"
+  color: green
+  label: "insn 11
+(set (mem/f:SI (pre_dec:SI (reg/f:SI 7 esp)) [0 S4 A32])
+    (symbol_ref/f:SI (\"*.LC0\")))
+"
+}
+edge: { sourcename: "void foo().11" targetname: "void foo().12" }
+node: {
+  title: "void foo().12"
+  color: darkgreen
+  label: "call_insn 12
+(set (reg:SI 0 eax)
+    (call (mem:QI (symbol_ref:SI (\"printf\")) [0 S1 A8])
+        (const_int 16 [0x10])))
+"
+}
+edge: { sourcename: "void foo().12" targetname: "void foo().13" }
+node: {
+  title: "void foo().13"
+  color: green
+  label: "insn 13
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 7 esp)
+                (const_int 16 [0x10])))
+        (clobber (reg:CC 17 flags))
+    ])
+"
+}
+edge: { sourcename: "void foo().13" targetname: "void foo().26" }
+node: {
+  title: "void foo().26"
+  color: green
+  label: "insn 26
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 6 ebp)
+                (const_int 4 [0x4])))
+        (set (reg/f:SI 6 ebp)
+            (mem:SI (reg/f:SI 6 ebp) [0 S4 A8]))
+        (clobber (mem:BLK (scratch) [0 A8]))
+    ])
+"
+}
+edge: { sourcename: "void foo().26" targetname: "void foo().27" }
+node: {
+  title: "void foo().27"
+  color: darkgreen
+  label: "jump_insn 27
+(return)
+"
+}
+}
+edge: { sourcename: "void foo().27" targetname: "void foo().999999" color: blue }
+edge: { sourcename: "void foo().27" targetname: "void foo().999999" color: green class: 3 }
+node: { title: "void foo().999999" label: "END" }
+}
+graph: { title: "int main()"
+folding: 1
+hidden: 2
+node: { title: "int main().0" }
+graph: {
+title: "int main().BB0"
+folding: 1
+color: lightblue
+label: "basic block 0"
+
+edge: { sourcename: "int main().0" targetname: "int main().29" color: blue }
+node: {
+  title: "int main().29"
+  color: lightgrey
+  label: "note 29
+ NOTE_INSN_BASIC_BLOCK"
+}
+edge: { sourcename: "int main().29" targetname: "int main().33" }
+node: {
+  title: "int main().33"
+  color: green
+  label: "insn 33
+(set (mem:SI (pre_dec:SI (reg/f:SI 7 esp)) [0 S4 A8])
+    (reg/f:SI 6 ebp))
+"
+}
+edge: { sourcename: "int main().33" targetname: "int main().34" }
+node: {
+  title: "int main().34"
+  color: green
+  label: "insn 34
+(set (reg/f:SI 6 ebp)
+    (reg/f:SI 7 esp))
+"
+}
+edge: { sourcename: "int main().34" targetname: "int main().35" }
+node: {
+  title: "int main().35"
+  color: green
+  label: "insn 35
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 7 esp)
+                (const_int -8 [0xfffffff8])))
+        (clobber (reg:CC 17 flags))
+        (clobber (mem:BLK (scratch) [0 A8]))
+    ])
+"
+}
+edge: { sourcename: "int main().35" targetname: "int main().5" }
+node: {
+  title: "int main().5"
+  color: green
+  label: "insn 5
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (and:SI (reg/f:SI 7 esp)
+                (const_int -16 [0xfffffff0])))
+        (clobber (reg:CC 17 flags))
+    ])
+"
+}
+edge: { sourcename: "int main().5" targetname: "int main().6" }
+node: {
+  title: "int main().6"
+  color: green
+  label: "insn 6
+(set (reg:SI 0 eax [59])
+    (const_int 0 [0x0]))
+"
+}
+edge: { sourcename: "int main().6" targetname: "int main().7" }
+node: {
+  title: "int main().7"
+  color: green
+  label: "insn 7
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (minus:SI (reg/f:SI 7 esp)
+                (reg:SI 0 eax [59])))
+        (clobber (reg:CC 17 flags))
+    ])
+"
+}
+edge: { sourcename: "int main().7" targetname: "int main().14" }
+node: {
+  title: "int main().14"
+  color: darkgreen
+  label: "call_insn 14
+(call (mem:QI (symbol_ref:SI (\"_Z3foov\")) [0 S1 A8])
+    (const_int 0 [0x0]))
+"
+}
+edge: { sourcename: "int main().14" targetname: "int main().19" }
+node: {
+  title: "int main().19"
+  color: green
+  label: "insn 19
+(set (reg:SI 0 eax [58])
+    (const_int 0 [0x0]))
+"
+}
+edge: { sourcename: "int main().19" targetname: "int main().28" }
+node: {
+  title: "int main().28"
+  color: green
+  label: "insn 28
+(use (reg/i:SI 0 eax))
+"
+}
+edge: { sourcename: "int main().28" targetname: "int main().38" }
+node: {
+  title: "int main().38"
+  color: green
+  label: "insn 38
+(parallel [
+        (set (reg/f:SI 7 esp)
+            (plus:SI (reg/f:SI 6 ebp)
+                (const_int 4 [0x4])))
+        (set (reg/f:SI 6 ebp)
+            (mem:SI (reg/f:SI 6 ebp) [0 S4 A8]))
+        (clobber (mem:BLK (scratch) [0 A8]))
+    ])
+"
+}
+edge: { sourcename: "int main().38" targetname: "int main().39" }
+node: {
+  title: "int main().39"
+  color: darkgreen
+  label: "jump_insn 39
+(return)
+"
+}
+}
+edge: { sourcename: "int main().39" targetname: "int main().999999" color: blue }
+edge: { sourcename: "int main().39" targetname: "int main().999999" color: green class: 3 }
+node: { title: "int main().999999" label: "END" }
+}
+}

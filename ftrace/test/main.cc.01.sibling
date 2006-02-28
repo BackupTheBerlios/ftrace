@@ -1,0 +1,103 @@
+
+;; Function void foo()
+
+(note 2 0 3 NOTE_INSN_DELETED)
+
+(note 3 2 5 NOTE_INSN_FUNCTION_BEG)
+
+(note 5 3 18 0xbdacf70c NOTE_INSN_BLOCK_BEG)
+
+(note 18 5 10 0 [bb 0] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 18 11 0 0x0 (parallel [
+            (set (reg/f:SI 7 esp)
+                (plus:SI (reg/f:SI 7 esp)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil)
+    (nil))
+
+(insn 11 10 12 0 0x0 (set (mem/f:SI (pre_dec:SI (reg/f:SI 7 esp)) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC0"))) -1 (nil)
+    (nil))
+
+(call_insn 12 11 13 0 0x0 (set (reg:SI 0 eax)
+        (call (mem:QI (symbol_ref:SI ("printf")) [0 S1 A8])
+            (const_int 16 [0x10]))) -1 (nil)
+    (nil)
+    (nil))
+
+(insn 13 12 14 0 0x0 (parallel [
+            (set (reg/f:SI 7 esp)
+                (plus:SI (reg/f:SI 7 esp)
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil)
+    (nil))
+
+(note 14 13 15 0xbdacf70c NOTE_INSN_BLOCK_END)
+
+(note 15 14 17 NOTE_INSN_FUNCTION_END)
+
+(code_label 17 15 19 1 1 "" [0 uses])
+
+(note 19 17 0 1 [bb 1] NOTE_INSN_BASIC_BLOCK)
+
+;; Function int main()
+
+(note 2 0 29 NOTE_INSN_DELETED)
+
+(note 29 2 5 0 [bb 0] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 29 6 0 0x0 (parallel [
+            (set (reg/f:SI 7 esp)
+                (and:SI (reg/f:SI 7 esp)
+                    (const_int -16 [0xfffffff0])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil)
+    (nil))
+
+(insn 6 5 7 0 0x0 (set (reg:SI 59)
+        (const_int 0 [0x0])) -1 (nil)
+    (expr_list:REG_EQUAL (const_int 0 [0x0])
+        (nil)))
+
+(insn 7 6 8 0 0x0 (parallel [
+            (set (reg/f:SI 7 esp)
+                (minus:SI (reg/f:SI 7 esp)
+                    (reg:SI 59)))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil)
+    (nil))
+
+(insn 8 7 3 0 0x0 (set (reg/f:SI 60)
+        (reg/f:SI 55 virtual-stack-dynamic)) -1 (nil)
+    (nil))
+
+(note 3 8 9 0 NOTE_INSN_FUNCTION_BEG)
+
+(note 9 3 14 0 0xbdacfc60 NOTE_INSN_BLOCK_BEG)
+
+(call_insn 14 9 15 0 0x0 (call (mem:QI (symbol_ref:SI ("_Z3foov")) [0 S1 A8])
+        (const_int 0 [0x0])) -1 (nil)
+    (nil)
+    (nil))
+
+(note 15 14 19 0 0xbdacfc60 NOTE_INSN_BLOCK_END)
+
+(insn 19 15 22 0 0x0 (set (reg:SI 58)
+        (const_int 0 [0x0])) -1 (nil)
+    (nil))
+
+(note 22 19 24 NOTE_INSN_FUNCTION_END)
+
+(code_label 24 22 31 2 2 "" [0 uses])
+
+(note 31 24 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 25 31 28 2 0x0 (set (reg/i:SI 0 eax)
+        (reg:SI 58)) -1 (nil)
+    (nil))
+
+(insn 28 25 0 2 0x0 (use (reg/i:SI 0 eax)) -1 (nil)
+    (nil))
